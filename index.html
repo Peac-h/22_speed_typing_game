@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Speed typing game, coded by the Peach." />
+    <meta name="keywords" content="HTML, CSS, Sass, Javascript, Coding" />
+    <meta name="author" content="the Peach" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barrio&family=Roboto+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="src/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="src/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="src/favicon/favicon-16x16.png"
+    />
+    <!-- <link rel="manifest" href="src/fav/site.webmanifest" /> -->
+
+    <link rel="stylesheet" href="src/sass/main.scss" />
+    <script type="module" src="src/js/script.js"></script>
+
+    <title>Speeeeed Me</title>
+  </head>
+  <body>
+    <div class="game">
+      <header class="game__header">
+        <div class="logo"><strong>Speeeeed Me</strong></div>
+        <div class="timer" id="timerEl">00:00</div>
+        <div class="author-logo">
+          <strong> <a href="https://github.com/Peac-h">Peach.</a></strong>
+        </div>
+      </header>
+
+      <main class="game__main">
+        <div class="quote-field">
+          <div class="quote" id="quoteEl"></div>
+          <div class="quote-author" id="quoteAuthor"></div>
+        </div>
+        <div class="typing-field">
+          <textarea
+            name=""
+            onpaste="return false"
+            autofocus
+            id="typingAreaEl"
+            placeholder="Crack your fingers... Here we go!"
+          ></textarea>
+        </div>
+      </main>
+
+      <footer class="game__results">
+        Your best shot is <span id="charactersEl">0</span> characters in
+        <span id="secondsEl">0</span> seconds.
+      </footer>
+    </div>
+  </body>
+</html>
