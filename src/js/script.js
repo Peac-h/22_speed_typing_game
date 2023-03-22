@@ -1,4 +1,6 @@
+import { API_URLS } from "./config.js";
 import { API_URL } from "./config.js";
+import { INDEX } from "./config.js";
 import { getJSON } from "./helpers.js";
 
 // DOM Selectors
@@ -19,20 +21,9 @@ window.addEventListener("load", (event) => getData(API_URL));
 const getData = (url) => {
   getJSON(url)
     .then((data) => {
-      const got = url.includes("gameofthrones");
-      const strThings = url.includes("strangerthings");
-      const BrBad = url.includes("breakingbad");
-      const lucifer = url.includes("lucifer");
-
-      const quote = got ? data.sentence : data.at(0).quote;
-      const author = got ? data.character.name : data.at(0).author;
-
-      let tvShow;
-
-      if (strThings) tvShow = `Stranger Things`;
-      if (BrBad) tvShow = `Breaking Bad`;
-      if (lucifer) tvShow = `Lucifer`;
-      if (got) tvShow = `GOT`;
+      const tvShow = API_URLS[INDEX].tvShow;
+      const author = API_URLS[INDEX].author(data);
+      const quote = API_URLS[INDEX].quote(data);
 
       renderData(quote, author, tvShow);
     })
@@ -51,7 +42,7 @@ const renderData = (quote, author, tvShow) => {
     // handling some syntax coming from API that doen't match keyboard values
     if (character === `’`) character = `'`;
     if (character === `“` || character === `”`) character = `"`;
-    if (character === "…") character = "...";
+    if (character === "…" || character === "...") character = "...";
 
     // render the quote
     const markup = `<span>${character}</span>`;
@@ -104,7 +95,8 @@ typingField.addEventListener("input", () => {
 
   // only ends up true if both array lengths are equal and there are not incorrect characters in typing field
   if (correct) {
-    // seconds is undefined in the beginning, so first scores are highscores, and after only updating if the time has improved
+    // seconds is undefined in the beginning, so first scores are highscores,
+    // and after that variables are only updating if the time has improved
     if (seconds === undefined || seconds > time) {
       seconds = time - 1;
       chars = typedCharacters.length;
