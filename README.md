@@ -8,7 +8,13 @@ The design is responsive to all screen sizes.
 
 ## Checkout The Live Demo
 
-[Speeeeed Me]()
+[Speeeeed Me](https://peac-h.github.io/22_speed_typing_game/)
+
+
+
+![Speeeeed Me](https://raw.githubusercontent.com/Peac-h/22_speed_typing_game/main/Screenshot.png)
+
+![Speeeeed Me](https://raw.githubusercontent.com/Peac-h/22_speed_typing_game/main/Screenshot2.png)
 
 ## Technologies Used
 
