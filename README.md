@@ -44,8 +44,8 @@ This project uses the
 
 - [Breaking Bad Quotes API](https://breakingbadquotes.xyz/)
 - [Game of Thrones Quotes API](https://gameofthronesquotes.xyz/)
-- [Lucifer Quotes API](https://lucifer-quotes.vercel.app/) and
-- [Stranger Things Quotes API](https://strangerthings-quotes.vercel.app/).
+- [Lucifer Quotes API](https://lucifer-quotes.vercel.app/)
+- [Stranger Things Quotes API](https://strangerthings-quotes.vercel.app/)
 
 ## Author
 
