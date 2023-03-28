@@ -1,10 +1,10 @@
-# Typing Challenge Game
+# Speed Typing Game
 
-This is a web-based typing game that displays a quote from a popular TV show and challenges the user to type the quote as quickly and accurately as possible. The game has different quotes from popular TV shows: Game of Thrones, Stranger Things, Breaking Bad, Lucifer. The game keeps track of the user's time and accuracy, and displays the highest scores achieved so far. Only if each character of the quote is typed correctly the user is proceeded to the next round.
+This is a typing game that displays a quote from a popular TV show and challenges the user to type the quote as quickly and accurately as possible. The game has different quotes from popular TV shows: Game of Thrones, Stranger Things, Breaking Bad, Lucifer. The game keeps track of the user's time and accuracy, and displays the highest scores achieved so far. Only if each character of the quote is typed correctly the user is proceeded to the next round.
 
 The design is responsive to all screen sizes.
 
-**This is my 21st project so far.**
+**This is my API based project and the 22nd project so far.**
 
 ## Checkout The Live Demo
 
@@ -15,11 +15,11 @@ The design is responsive to all screen sizes.
 - HTML
 - CSS
 - Sass
-- JavaScript (using asynchronous js, AJAX calls, modules and parcel bundler)
+- JavaScript (using asynchronous js, public APIs, AJAX calls, modules and parcel bundler)
 
 ## JavaScript Features
 
-The game was built using modern JavaScript features such as arrow functions, template literals, and the fetch API for making HTTP requests. For asynchronous behavior `fetch` method, `Promise` object and `then()` `catch()` methods were used. Code also contains a timer implementation, intervals to update the timer and logic to track the high score.
+The game was built using modern JavaScript features and the fetch API for making HTTP requests. For handling asynchronous behavior `Promise` object and `then()` `catch()` methods were used. Code contains a timer implementation, intervals to update the timer and logic to track the high score.
 
 ## How to Play
 

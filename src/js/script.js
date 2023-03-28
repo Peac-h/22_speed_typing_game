@@ -1,6 +1,5 @@
 import { API_URLS } from "./config.js";
-import { API_URL } from "./config.js";
-import { INDEX } from "./config.js";
+import { getURL } from "./helpers.js";
 import { getJSON } from "./helpers.js";
 
 // DOM Selectors
@@ -15,15 +14,16 @@ const quoteAuthorEl = document.getElementById("quoteAuthor");
 let timer, time, chars, seconds;
 
 // Begin The Game
-window.addEventListener("load", (event) => getData(API_URL));
+window.addEventListener("load", (event) => getData(getURL()));
 
 // API Data Handling Function
 const getData = (url) => {
   getJSON(url)
     .then((data) => {
-      const tvShow = API_URLS[INDEX].tvShow;
-      const author = API_URLS[INDEX].author(data);
-      const quote = API_URLS[INDEX].quote(data);
+      const index = API_URLS.findIndex((obj) => obj.url === url);
+      const tvShow = API_URLS[index].tvShow;
+      const author = API_URLS[index].author(data);
+      const quote = API_URLS[index].quote(data);
 
       renderData(quote, author, tvShow);
     })
@@ -42,7 +42,7 @@ const renderData = (quote, author, tvShow) => {
     // handling some syntax coming from API that doen't match keyboard values
     if (character === `’`) character = `'`;
     if (character === `“` || character === `”`) character = `"`;
-    if (character === "…" || character === "...") character = "...";
+    if (character === "…" || character === "...") character = ".";
 
     // render the quote
     const markup = `<span>${character}</span>`;
@@ -105,7 +105,7 @@ typingField.addEventListener("input", () => {
     highSecEl.innerText = seconds;
     highCharEl.innerText = chars;
 
-    getData(API_URL);
+    getData(getURL());
   }
 });
 

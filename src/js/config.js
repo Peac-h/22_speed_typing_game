@@ -25,9 +25,4 @@ export const API_URLS = [
   },
 ];
 
-export const API_URL =
-  API_URLS[Math.floor(Math.random() * API_URLS.length)].url;
-
-export const INDEX = API_URLS.findIndex((obj) => obj.url === API_URL);
-
 export const TIMEOUT_SEC = 10;
