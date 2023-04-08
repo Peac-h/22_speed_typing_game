@@ -10,11 +10,15 @@ const timeout = function (sec) {
 };
 
 export const getJSON = function (url) {
-  return Promise.race([fetch(url), timeout(TIMEOUT_SEC)]).then((response) => {
-    if (!response.ok) throw new Error(`${error}`);
+  return Promise.race([fetch(url), timeout(TIMEOUT_SEC)])
+    .then((response) => {
+      if (!response.ok) throw new Error(`${response.statusText}`);
 
-    return response.json();
-  });
+      return response.json();
+    })
+    .catch((error) => {
+      throw error;
+    });
 };
 
 export function getURL() {
